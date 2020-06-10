@@ -60,7 +60,7 @@ class CertControlV1Test: BaseTest() {
             response()
         }
     //sprawdzam, czy poprawnie dodało się ORGANIZATION
-        val organizationOnResponse = responseCertificate.jsonPath().getString("name")
+        val organizationOnResponse = responseCertificate.jsonPath().getString("organization")
         assertEquals("ATT", organizationOnResponse)
 
     //sprawdzam, czy poprawnie dodało się NAME
@@ -68,11 +68,11 @@ class CertControlV1Test: BaseTest() {
         assertEquals("Asia", nameOnResponse)
 
     //sprawdzam, czy poprawnie dodało się PERIOD
-        val periodOnResponse = responseCertificate.jsonPath().getString("name")
+        val periodOnResponse = responseCertificate.jsonPath().getString("period")
         assertEquals("zawsze", periodOnResponse)
 
     //sprawdzam, czy poprawnie dodało się TRADE
-        val tradeOnResponse = responseCertificate.jsonPath().getString("name")
+        val tradeOnResponse = responseCertificate.jsonPath().getString("trade")
         assertEquals("psychologia sportu", tradeOnResponse)
     }
 
@@ -130,11 +130,11 @@ class CertControlV1Test: BaseTest() {
         assertEquals("Asia MG", nameOnResponse)
 
         //sprawdzam, czy poprawnie zmieniło się PERIOD
-        val periodOnResponse = responseCertificate.jsonPath().getString("name")
+        val periodOnResponse = responseCertificate.jsonPath().getString("period")
         assertEquals("zawsze albo i nie", periodOnResponse)
 
         //sprawdzam, czy poprawnie zmieniło się TRADE
-        val tradeOnResponse = responseCertificate.jsonPath().getString("name")
+        val tradeOnResponse = responseCertificate.jsonPath().getString("trade")
         assertEquals("teoria wszystkiego", tradeOnResponse)
     }
 
